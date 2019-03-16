@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Edit Articles</title>
+
+</head>
+
+<body class="p-3 mb-5 bg-secondary text-light">
+    <h3 class="text-center ml-3">Articles</h3>
+    <!-- <p>You are in the Edit</p> -->
+    <form #form="ngForm">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="p-3 input-group col-sm-6 mb-2">
+                Article Title:
+                 <input class="form-control"  name="name" [(ngModel)]= "article.title" >
+            </div>
+            <div class="col-sm-3">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="input-group col-sm-6 mb-2">
+             Article Date:
+              <input type="date" name="date" [value]="article.date | date:'yyy-MM-dd'" (input)="article.date=parseDate($event.target.value)"> 
+            </div>
+            <div class="col-sm-3">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+            </div>
+            <div class="p-3 input-group col-sm-6 mb-2">
+            Article Body:<textarea name="body" class="form-textarea" placeholder="Article Body" [(ngModel)] = "article.body" ></textarea>
+            </div>
+            <div class="col-sm-3">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="p-3 input-group col-sm-6 mb-2">
+              <button class=" btn btn-primary" (click)="save(article)">Save Article</button>
+            </div>
+            <div class="col-sm-3">
+               <a class="btn btn-primary" routerLink="/articles">Back to Articles</a>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+      </form>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<table class="table">
+  <tr>
+    <!-- <th>Article Date</th> -->
+    <th>Article Title</th>
+
+  </tr>
+  <!-- <tr *ngFor="let article of articles"[class.selected]="article === selectedArticle"
+       (click)="onSelect(article)" > -->
+
+  <tr *ngFor="let article of articles" [class.selected]="article===selectedArticle" routerLink="/articles/{{article._id}}">
+
+      <td>{{article.title}}</td>
+      <td>{{article.date | date:'short'}}</td>
+
+  </tr>
+</table>
+<br>
+<a class="btn btn-primary" routerLink="/articles/new/edit">Create Article</a> 
+  <!-- <div>{{selectedArticle.title}}</div>
+  <div>{{selectedArticle.body}}</div> -->
+<!-- <app-article-detail [article]="selectedArticle"></app-article-detail> -->

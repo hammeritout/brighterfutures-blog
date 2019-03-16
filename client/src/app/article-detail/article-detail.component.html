@@ -1,0 +1,24 @@
+
+    <p>
+      You are in the Details.
+      </p>
+    <div *ngIf="article">
+       <h2>{{article.body}}</h2>
+    </div>
+    <a class="btn btn-primary" routerLink="/articles">Back to Articles</a>  
+    <a class="btn btn-primary" routerLink="/articles/{{article._id}}/edit">Article Edit</a>  
+<!-- </table> -->
+<!-- <div *ngIf="selectedArticle">
+
+      <h2>{{selectedArticle.title | uppercase}} </h2>
+      <div>{{selectedArticle.body}}</div>
+      <div>
+        <label>name:
+          <input [(ngModel)]="selectedArticle.title" placeholder="title"/>
+        </label>
+      </div>
+
+    </div> -->
+
+
+      <!-- </div> -->
