@@ -1,7 +1,18 @@
 body {
     /* text-align: center; */
     font-family: "Lato", sans-serif;
+    color: black; 
     
     background-color: #89cFF0
   
   }
+  span + span {
+    margin-left: 10px;
+}
+.jumbotron {
+    
+  background-image: url("image/loin_face.jpg");
+  background-size: cover;
+  height: 550px;
+  background-position: center;
+}

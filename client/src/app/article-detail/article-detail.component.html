@@ -1,24 +1,36 @@
+<div class="jumbotron">
 
-    <p>
-      You are in the Details.
-      </p>
-    <div *ngIf="article">
-       <h2>{{article.body}}</h2>
+</div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1">
+              </div>
+              <div class="p-3 input-group col-sm-10 mb-2"*ngIf="article" >      <p class="text-dark font-weight-bold">{{article.title}}</p>
+             </div >
+             <div class="col-sm-1">
+             </div>
+         </div>
+        <div class="row">
+            <div class="col-sm-1">
+              </div>
+              <div class="p-3 input-group col-sm-10 mb-2"*ngIf="article" >      <p class="text-dark">{{article.body}}</p>
+             </div >
+             <div class="col-sm-1">
+             </div>
+         </div>
+
+       <div class="row">
+          <div class="col-sm-1">
+          </div>
+          <div class="p-3 input-group col-sm-10 mb-2" > 
+           <span><a class="btn btn-primary" routerLink="/articles">Back to Articles</a> </span> 
+           <span><a class="btn btn-primary" routerLink="/articles/{{article._id}}/edit">Article Edit</a></span>
+    
+           </div> 
+           <div class="col-sm-1">
+            </div>
+       </div> 
     </div>
-    <a class="btn btn-primary" routerLink="/articles">Back to Articles</a>  
-    <a class="btn btn-primary" routerLink="/articles/{{article._id}}/edit">Article Edit</a>  
-<!-- </table> -->
-<!-- <div *ngIf="selectedArticle">
 
-      <h2>{{selectedArticle.title | uppercase}} </h2>
-      <div>{{selectedArticle.body}}</div>
-      <div>
-        <label>name:
-          <input [(ngModel)]="selectedArticle.title" placeholder="title"/>
-        </label>
-      </div>
-
-    </div> -->
-
-
-      <!-- </div> -->
+    

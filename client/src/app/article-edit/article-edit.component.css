@@ -1,0 +1,11 @@
+span + span {
+    margin-left: 10px;
+}
+
+.jumbotron {
+    
+    background-image: url("image/grils_coloring.jpg");
+    background-size: cover;
+    height: 600px;
+    background-position: center;
+  }

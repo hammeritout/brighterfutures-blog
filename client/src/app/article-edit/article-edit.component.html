@@ -10,51 +10,71 @@
 
 </head>
 
+<div class="jumbotron">
+
+  </div>
+
 <body class="p-3 mb-5 bg-secondary text-light">
     <h3 class="text-center ml-3">Articles</h3>
-    <!-- <p>You are in the Edit</p> -->
+   
     <form #form="ngForm">
         <div class="container">
           <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
             </div>
-            <div class="p-3 input-group col-sm-6 mb-2">
-                Article Title:
-                 <input class="form-control"  name="name" [(ngModel)]= "article.title" >
+            <div class="p-3 input-group col-sm-8 mb-2">
+               <label>Title:</label> 
+                <input class="form-control" name="title" placeholder="Title" [(ngModel)]="article.title">
+                 
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="input-group col-sm-8 mb-2">
+             
+             <label>Date:</label>
+             <!-- <input type="date" class="form-control" name="date" 
+              placeholder="date"[value]="article.date | date:'yyy-MM-dd'" (input)="article.date=parseDate($event.target.value)"> 
+              -->
+             <input type="date" class="form-control" name="date" placeholder="date"[value]="article.date | date:'yyy-MM-dd'" (input)="article.date=convertUTCDateToLocalDate($event.target.value)"> 
+          
+          
+          <br>{{article.date | date:'fullDate'}}
+              
+            </div>
+            <div class="col-sm-2">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-2">
+            </div>
+            
+            <div class="p-3 input-group col-sm-8 mb-2">
+             <label>Body:</label>
+             <textarea class="form-control" name="body" [(ngModel)]="article.body" rows="10"></textarea>
+            </div>
+            <div class="col-sm-2">
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm-3">
             </div>
-            <div class="input-group col-sm-6 mb-2">
-             Article Date:
-              <input type="date" name="date" [value]="article.date | date:'yyy-MM-dd'" (input)="article.date=parseDate($event.target.value)"> 
-            </div>
-            <div class="col-sm-3">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-            </div>
             <div class="p-3 input-group col-sm-6 mb-2">
-            Article Body:<textarea name="body" class="form-textarea" placeholder="Article Body" [(ngModel)] = "article.body" ></textarea>
+              <span>
+                <button class="btn btn-primary" (click)="save(article)">Save Article</button>
+              </span>
+              <span>
+                <a class="btn btn-primary" routerLink="/articles">Back to Articles</a>
+              </span>
             </div>
             <div class="col-sm-3">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-3">
-            </div>
-            <div class="p-3 input-group col-sm-6 mb-2">
-              <button class=" btn btn-primary" (click)="save(article)">Save Article</button>
-            </div>
-            <div class="col-sm-3">
-               <a class="btn btn-primary" routerLink="/articles">Back to Articles</a>
+              
             </div>
           </div>
 

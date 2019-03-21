@@ -2,3 +2,15 @@
     background-color: #CFD8DC !important;
     color: black;
   }
+
+  .jumbotron {
+    
+    background-image: url("image/financial_Literacy.jpg");
+    background-size: cover;
+    height: 400px;
+    background-position: center;
+  }
+
+  span + span {
+    margin-left: 10px;
+}

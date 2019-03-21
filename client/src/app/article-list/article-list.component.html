@@ -1,11 +1,44 @@
-<table class="table">
-  <tr>
-    <!-- <th>Article Date</th> -->
-    <th>Article Title</th>
+<div class="jumbotron">
 
+  </div>
+
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-1">
+          </div>
+          <div class="p-3 input-group col-sm-10 mb-2">   
+              <table class="table">
+                  <tr>
+                    <th>Article Title</th>
+                    <th>Article Date</th>
+                  </tr> 
+                  <tr *ngFor="let article of articles" [class.selected]="article===selectedArticle" routerLink="/articles/{{article._id}}">
+
+                    <td>{{article.title}}</td>
+                                       
+                    <td>{{article.date | date:'fullDate'}}</td>
+                </tr>
+                <tr>
+                    <a class="btn btn-primary" routerLink="/articles/new/edit">Create Article</a> 
+                </tr>
+             </table>       
+         </div >
+         <div class="col-sm-1">
+  
+         </div>
+    </div>
+    
+
+  </div>
+
+
+<!-- <table class="table">
+  <tr>
+   
+    <th>Article Title</th>
+    <th>Article Date</th>
   </tr>
-  <!-- <tr *ngFor="let article of articles"[class.selected]="article === selectedArticle"
-       (click)="onSelect(article)" > -->
+  
 
   <tr *ngFor="let article of articles" [class.selected]="article===selectedArticle" routerLink="/articles/{{article._id}}">
 
@@ -14,8 +47,6 @@
 
   </tr>
 </table>
-<br>
-<a class="btn btn-primary" routerLink="/articles/new/edit">Create Article</a> 
-  <!-- <div>{{selectedArticle.title}}</div>
-  <div>{{selectedArticle.body}}</div> -->
-<!-- <app-article-detail [article]="selectedArticle"></app-article-detail> -->
+<br> -->
+<!-- <a class="btn btn-primary" routerLink="/articles/new/edit">Create Article</a> 
+   -->
