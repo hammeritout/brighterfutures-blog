@@ -12,14 +12,13 @@ import {ActivatedRoute, RouterPreloader} from '@angular/router';
 })
 export class ArticleDetailComponent {
   // @Input() article;
-  article = {
-    id: 0,
-    date: Date,
-    title:'',
-    body:''
-  };
-
-   constructor
+  // article = {
+  //   id:0, 
+  //   date:Date, 
+  //   title:'',
+  //   body:''};
+    article;
+      constructor
    (private route: ActivatedRoute,
     private articleService:ArticleService)
      {

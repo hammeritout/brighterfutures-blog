@@ -18,11 +18,13 @@ const Articles = mongoose.model('Articles',
 
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 8001;
+const port = process.env.PORT || 8001;
 
-app.listen(8001);
+app.listen(port);
 
-console.log('Blog server listening at ' +PORT);
+console.log('Blog server listening at %j!', port);
+
+app.use('/',express.static('./client/dist/blog'));
 
 
 function getArticles() {

@@ -41,7 +41,7 @@ export class ArticleEditComponent  {
      
 }
 
-  save() {
+  save(article) {
     this.articleService.saveArticle(this.article).then(article =>{
       this.router.navigate(['/articles']);
     });
